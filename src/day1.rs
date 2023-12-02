@@ -8,8 +8,6 @@ pub fn solution() {
     let mut total = 0;
 
     for line in PUZZLE.lines() {
-        dbg!(line);
-
         if line.is_empty() {
             break;
         }
@@ -21,17 +19,21 @@ pub fn solution() {
             let mut buff = String::new();
             let new = bytes.clone().skip(i).cloned().collect::<Vec<u8>>();
 
+            // Found just a regular number
             if (*new.first().unwrap() as char).is_numeric() {
                 vals.push((*new.first().unwrap() as char).to_string().parse().unwrap());
+                continue;
             }
 
             for b in new {
                 buff.push(b as char);
 
+                // Check if the buffer is a digit
                 if !DIGITS.iter().any(|f| f.starts_with(&buff)) {
                     break;
                 }
 
+                // Add the digit to the vector
                 if let Some(digit) = DIGITS.iter().find(|f| f.to_string() == buff) {
                     println!("Found digit : {}", digit);
                     match digit.as_ref() {
@@ -49,14 +51,6 @@ pub fn solution() {
                 }
             }
         }
-
-        println!("LINE : {line}");
-        println!("{:?}", vals);
-        println!(
-            "First : {}\nLast : {}",
-            vals.first().unwrap(),
-            vals.last().unwrap()
-        );
 
         total += vals.first().unwrap() * 10 + vals.last().unwrap();
     }
