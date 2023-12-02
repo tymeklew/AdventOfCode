@@ -1,4 +1,4 @@
-const PUZZLE: &str = include_str!("./day1.txt");
+const PUZZLE: &str = include_str!("../puzzles/day1.txt");
 
 const DIGITS: [&str; 9] = [
     "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",

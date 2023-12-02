@@ -1,4 +1,4 @@
-const PUZZLE: &str = include_str!("./day2.txt");
+const PUZZLE: &str = include_str!("../puzzles/day2.txt");
 
 const RED_CUBES: u16 = 12;
 const GREEN_CUBES: u16 = 13;
