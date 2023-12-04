@@ -10,7 +10,7 @@ struct Card {
 
 struct Solver {
     cards: Vec<Card>,
-    scratchcards: HashMap<u16, Vec<u16>>, // Mapping of id to amount
+    scratchcards: HashMap<u16, Vec<u16>>, // Mapping of card id to what ids it references
 }
 impl Solver {
     fn new(cards: Vec<Card>) -> Self {
