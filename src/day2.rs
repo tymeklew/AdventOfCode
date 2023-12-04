@@ -28,5 +28,6 @@ pub fn solution() {
         }
         sum += min_blue * min_green * min_red;
     }
+
     dbg!(sum);
 }
